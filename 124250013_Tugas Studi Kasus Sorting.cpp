@@ -32,7 +32,7 @@ int main()
 			case 1:
 				bubbleSort(namaMhs, n);
 					
-				cout << "\nList nama setelah disorting (Bubble Sort): " << endl; 
+				cout << "\nList nama setelah disorting (Bubble Sort Asc): " << endl; 
 				tampilData(namaMhs, n);
 					
 				cout << "Ingin mengganti sorting? (Y/N) : ";
@@ -48,7 +48,7 @@ int main()
 			case 2:									
 				quickSort(namaMhs, 0, n-1);
 					
-				cout << "\nList nama setelah disorting (Quick Sort): " << endl; 
+				cout << "\nList nama setelah disorting (Quick Sort Desc): " << endl; 
 				tampilData(namaMhs, n);
 										
 				cout << "Ingin mengganti sorting? (Y/N) : ";
@@ -91,9 +91,9 @@ void quickSort(string namaMhs[], int awal, int akhir) {
     string pivot = namaMhs[(awal + akhir) / 2];
 
     do {
-        while (namaMhs[low] < pivot)
+        while (namaMhs[low] > pivot)
             low++;
-        while (namaMhs[high] > pivot)
+        while (namaMhs[high] < pivot)
             high--;
 
         if (low <= high) {
@@ -110,4 +110,5 @@ void quickSort(string namaMhs[], int awal, int akhir) {
     if (low < akhir)
         quickSort(namaMhs, low, akhir);
 }
+
 
